@@ -26,11 +26,7 @@ public class SimilarProductsController {
 	 */
 	@GetMapping(path = "/{id}/similar")
 	public Flux<Product> findSimilarById(@PathVariable String id) {
-		try {
 		return similarProductsService.findSimilarById(id);
-		} catch (MethodNotFoundException e) {
-			return Flux.error(e);
-		}
 	}
 	
 }
